@@ -210,6 +210,7 @@ footer{
     .navigation-menu ul.main-menu li:first-child{
         display: block;
         text-align: left;
+        border-right: none;
     }
 }
 @media only screen and (max-width: 480px) {
