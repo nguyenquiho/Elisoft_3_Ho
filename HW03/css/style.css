@@ -110,6 +110,7 @@ footer{
     color: blue;
     padding: 10px 50px;
 }
+
 .main-menu li > .sub-main-menu{
     min-width: 170px;
     display: none; 
@@ -211,6 +212,9 @@ footer{
         display: block;
         text-align: left;
         border-right: none;
+    }
+    .navigation-menu ul li:first-child{
+        display: block;
     }
 }
 @media only screen and (max-width: 480px) {
