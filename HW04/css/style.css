@@ -90,7 +90,7 @@ footer{
     line-height: 50px;
 }
 
-.main-menu li{
+.is-desktop .main-menu li{
     width: 180px;
     height: 40px;
     line-height: 40px;
@@ -99,68 +99,68 @@ footer{
     text-align: center;
     border-right: 1px dotted red;
 }
-.main-menu > li:first-child{
+.is-desktop .main-menu > li:first-child{
     display: none;
 }
-.main-menu > li:last-child{
+.is-desktop .main-menu > li:last-child{
     border-right: none;
 }
-.navigation-menu ul li a{
+.navigation-menu.is-desktop ul li a{
     text-decoration: none;
     color: blue;
     padding: 10px 50px;
 }
 
-.main-menu li > .sub-main-menu{
+.is-desktop .main-menu li > .sub-main-menu{
     min-width: 170px;
     display: none; 
     position: absolute;
 }
 
-.main-menu li:hover .sub-main-menu{
+.is-desktop .main-menu li:hover .sub-main-menu{
     display: block; 
 }
-.sub-main-menu li{
+.is-desktop .sub-main-menu li{
     position: relative;
     background: #9efacc;
     border-bottom: 1px dotted pink;
 }
+
 /* .sub-main-menu li:hover{
     background: #a2b657;
     
 } */
 
-.sub-main-menu li:hover a{
+.is-desktop .sub-main-menu li:hover a{
     color: red;
     text-decoration: revert!important; 
     text-decoration-color: red;
 }
 
-.sub-main-menu li a{
+.is-desktop .sub-main-menu li a{
     padding: 0px 10px;
 }
-.sub-main-menu li > .sub-menu{
+.is-desktop .sub-main-menu li > .sub-menu{
     display: none;
     position: absolute;
     left: 100%;
     top: 0px;
 }
-.sub-main-menu li > .sub-menu li{
+.is-desktop .sub-main-menu li > .sub-menu li{
     background: #f5f5a3;
     border-bottom: 1px dotted blue;
 }
-.sub-main-menu li > .sub-menu li a{
+.is-desktop .sub-main-menu li > .sub-menu li a{
     color: blue;
     text-decoration: none!important;
 }
-.sub-main-menu li > .sub-menu li a:hover{
+.is-desktop .sub-main-menu li > .sub-menu li a:hover{
     text-decoration: revert!important;
     color: red;
 }
-.sub-main-menu li:hover .sub-menu{
+.is-desktop .sub-main-menu li:hover .sub-menu{
     display: block;
 }
-
 @media only screen and (max-width: 1000px) {
     #aside-left{
         width: 30%;
@@ -207,16 +207,108 @@ footer{
         /* margin: 10px; */
     }
     .navigation-menu ul.main-menu li{
-        display: none;
+        display: block;
     }
     .navigation-menu ul.main-menu li:first-child{
         display: block;
         text-align: left;
         border-right: none;
     }
-    .navigation-menu ul li:first-child{
-        display: block;
+    .is-mobile .main-menu{
+        width: 300px;
+        position: relative;
+        z-index: 1000;
+        /* background: whitesmoke; */
+        top: 0px;
     }
+    /* .is-mobile #btn-menu-bar{
+            position: absolute;
+            right: 2px;
+            top: 2px;
+    } */
+    .is-mobile .main-menu li{
+        background: whitesmoke;
+        border-bottom: 1px solid gainsboro;
+        padding-left: 15px;
+    }
+    .is-mobile .sub-main-menu li{
+        background: whitesmoke;
+        border-bottom: none;
+        padding-left: 10px;
+    }
+    .is-mobile .sub-menu li{
+        background: whitesmoke;
+        border-bottom: none;
+        padding-left: 10px;
+    }
+    .is-mobile .main-menu li:first-child{
+        display: block!important;
+        background: none;
+    }
+    
+    .is-mobile .main-menu .sub-main-menu{
+        display: none;
+    }
+    /* .is-mobile .main-menu .sub-main-menu .sub-menu{
+        display: none;
+    } */
+    .is-mobile .main-menu .sub-main-menu li::before{
+        content: "\f10c";
+        font-family: FontAweSome;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+    .is-mobile .main-menu .sub-menu li::before{
+        content: "\f105";
+        font-family: FontAweSome;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+    .make-bg{
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.65;
+        position: fixed;
+        z-index: 999;
+        top: 0px;
+        display: none;
+    }
+
+    /* .is-mobile .main-menu{
+        display: block;
+        width: 500px;
+        position: relative;
+        z-index: 1000;
+    }
+    .is-mobile .main-menu li{
+        background: #f7f7f7;
+        display: block;
+        border-bottom: 1px solid #ccc;
+        padding-left: 10px;
+    }
+    .is-mobile .main-menu li:first-child{
+        border-bottom: none;
+    }
+    .is-mobile .main-menu li .sub-main-menu li{
+        background: #f7f7f7;
+        display: block;
+        border-bottom: none;
+        padding-left: 10px;
+    }
+    .is-mobile .main-menu li .sub-main-menu li ul.sub-menu li{
+        background: #f7f7f7;
+        display: block;
+        border-bottom: none;
+    }
+    .is-mobile #toggle-product::after{
+        content: "\f067";
+        font-family: "FontAwesome";
+        float: right;
+        display: block;
+        box-sizing: border-box;
+
+    } */
 }
 @media only screen and (max-width: 480px) {
     #aside-left{
@@ -239,7 +331,7 @@ footer{
         /* margin: 10px; */
     }
     .navigation-menu ul.main-menu{
-        display: none;
+        display: block;
     }
     .navigation-menu ul li:first-child{
         display: block;
