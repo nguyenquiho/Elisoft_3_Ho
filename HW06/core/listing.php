@@ -22,7 +22,7 @@
                                     <span class="product-name"><a href="detail.php?id=<?php echo $row3['id']; ?>"><?php echo $row3['name']; ?></a></span>
                                     <a href=""><img class="product-img" src="../image/iphone.jpg" alt="<?php echo $row3['name']; ?>"></a> 
                                     <span class="product-price"><?php echo number_format($row3['price'])." .đ"; ?></span>
-                                    <button class="btn-buy">Mua</button>
+                                    <button class="btn-buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn-detail">Chi tiết <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                 </div>
                      <?php   }
                     ?>
