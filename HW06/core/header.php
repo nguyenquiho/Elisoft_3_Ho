@@ -35,7 +35,7 @@ if (!$result2) {
         <nav class="navigation-menu is-desktop">
             <ul class="main-menu">
                 <li><button id="btn-menu-bar"><i class="fa fa-bars" aria-hidden="true"></i></button></li>
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="listing.php">Trang chủ</a></li>
                 <li><a href="#">Giới thiệu</a></li>
                 <li id="toggle-product"><a href=""> Sản phẩm</a>
                     <ul class="sub-main-menu">

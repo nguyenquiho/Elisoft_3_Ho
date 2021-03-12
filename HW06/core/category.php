@@ -27,7 +27,7 @@
                                         <span class="product-name"><?php echo $row['name']; ?></span>
                                         <img class="product-img" src="../image/iphone.jpg" alt="Điện thoại iphone 12 giá 12.000.000đ">
                                         <span class="product-price"><?php echo number_format($row['price'])." .đ"; ?></span>
-                                        <button class="btn-buy">Mua</button>
+                                        <button class="btn-buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn-detail">Chi tiết <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                     </div>
                          <?php   }
                         }
@@ -38,6 +38,7 @@
                             <div>
                                 <h2 style="color:red;padding:20px">
                                 <?php echo "Hiện tại, loại ".$row2['name']." chưa có sản phẩm, vui lòng quay lại sau!"; ?>
+                                <img src="../image/no_product.jpg" alt="">
                                 </h2>
                                 
                             </div>
