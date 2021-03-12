@@ -36,7 +36,7 @@ if (!$result2) {
             <ul class="main-menu">
                 <li><button id="btn-menu-bar"><i class="fa fa-bars" aria-hidden="true"></i></button></li>
                 <li><a href="listing.php">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="about_us.php">Giới thiệu</a></li>
                 <li id="toggle-product"><a href=""> Sản phẩm</a>
                     <ul class="sub-main-menu">
                         <?php
@@ -61,8 +61,8 @@ if (!$result2) {
                         ?>
                     </ul>
                 </li>
-                <li><a href="#">Hướng dẫn</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="tutorial.php">Hướng dẫn</a></li>
+                <li><a href="contact.php">Liên hệ</a></li>
             </ul>
             <form action="" id="search-form">
                 <input type="text" name="search" id="">&nbsp;<button type="submit" class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>

@@ -8,6 +8,7 @@
         <div id="main-content">
             <aside id="aside-left">Left</aside>
             <article>
+                <div class="breadcrumb"></div>
                 <section>
                     <?php
                         if(isset($_GET['cat'])){
@@ -24,10 +25,10 @@
                             for ($i=0; $i < 20; $i++) { 
                                 $row = mysqli_fetch_assoc($result); ?>
                                     <div class="product">
-                                        <span class="product-name"><?php echo $row['name']; ?></span>
-                                        <img class="product-img" src="../image/iphone.jpg" alt="Điện thoại iphone 12 giá 12.000.000đ">
+                                        <span class="product-name"><a href="<?php echo "detail.php?id=".$row['id']?>"><?php echo $row['name']; ?></a> </span>
+                                        <a href="<?php echo "detail.php?id=".$row['id']?>"><img class="product-img" src="../image/iphone.jpg" alt="Điện thoại iphone 12 giá 12.000.000đ"></a>
                                         <span class="product-price"><?php echo number_format($row['price'])." .đ"; ?></span>
-                                        <button class="btn-buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>&nbsp;&nbsp;<button class="btn-detail">Chi tiết <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                        <button class="btn-buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>&nbsp;&nbsp;<a href="detail.php?id=<?php echo $row['id'];?>"><button class="btn-detail">Chi tiết <i class="fa fa-angle-double-right" aria-hidden="true"></i></button></a>
                                     </div>
                          <?php   }
                         }
