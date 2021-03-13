@@ -45,7 +45,7 @@
                                 <hr>
                            <?php }
                            else { ?>
-                                <span style="text-decoration-line:line-through" class="price-product-detail"><?php echo number_format($row['price'])." .đ"; ?></span>&nbsp;&nbsp;
+                                <span style="text-decoration-line:line-through;color:black;" class="price-product-detail"><?php echo number_format($row['price'])." .đ"; ?></span>&nbsp;&nbsp;
                                 <span style="color:red"class="price-product-detail"><?php echo number_format($row['discount'])." .đ"; ?></span>
                                 <hr>
                        <?php    }

@@ -14,7 +14,7 @@
                         if(isset($_GET['cat'])){
                             $cat = $_GET['cat'];
                         }
-                        $sql= "SELECT * FROM `fs_product` WHERE `category_id` = $cat ORDER BY id DESC LIMIT 20";
+                        $sql= "SELECT * FROM `fs_product` WHERE `category_id` = $cat ORDER BY id DESC";
                         $result = mysqli_query($link,$sql);
                         if (!$result) {
                             printf("Error: %s\n", mysqli_error($link));
@@ -22,12 +22,24 @@
                         }
                         $num=mysqli_num_rows($result);
                         if($num > 0){
-                            for ($i=0; $i < 20; $i++) { 
-                                $row = mysqli_fetch_assoc($result); ?>
+                            while ($row = mysqli_fetch_assoc($result)) { 
+                                 ?>
                                     <div class="product">
                                         <span class="product-name"><a href="<?php echo "detail.php?id=".$row['id']?>"><?php echo $row['name']; ?></a> </span>
                                         <a href="<?php echo "detail.php?id=".$row['id']?>"><img class="product-img" src="../image/iphone.jpg" alt="Điện thoại iphone 12 giá 12.000.000đ"></a>
-                                        <span class="product-price"><?php echo number_format($row['price'])." .đ"; ?></span>
+                                        <!-- <span class="product-price"><?php echo number_format($row['price'])." .đ"; ?></span> -->
+                                        <?php
+                                            if($row['discount'] == 0){ ?>
+                                                <span class="price-product-detail"><?php echo number_format($row['price'])." .đ"; ?></span>
+                                                <hr>
+                                        <?php }
+                                        else { ?>
+                                                <span style="text-decoration-line:line-through;color:black;" class="price-product-detail"><?php echo number_format($row['price'])." .đ"; ?></span>&nbsp;&nbsp;
+                                                <br><span style="color:red"class="price-product-detail"><?php echo number_format($row['discount'])." .đ"; ?></span>
+                                                <hr>
+                                    <?php    }
+
+                                            ?>
                                         <button class="btn-buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>&nbsp;&nbsp;<a href="detail.php?id=<?php echo $row['id'];?>"><button class="btn-detail">Chi tiết <i class="fa fa-angle-double-right" aria-hidden="true"></i></button></a>
                                     </div>
                          <?php   }

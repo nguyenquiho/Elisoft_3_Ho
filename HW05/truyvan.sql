@@ -20,5 +20,6 @@ SELECT `id`,`name`,`price` FROM `fs_product` ORDER BY `view` desc LIMIT 10
 SELECT COUNT(*) FROM `fs_product_img` LEFT JOIN `fs_product` ON `fs_product_img`.`product_id` = `fs_product`.`id`
 
 --7
-SELECT fs_product.id, fs_product.name FROM fs_product LEFT JOIN fs_product_img ON `fs_product`.`id` = `fs_product_img`.`product_id` AND fs_product_img.url = ""
+SELECT fs_product.id, fs_product.name FROM fs_product LEFT JOIN fs_product_img ON `fs_product`.`id` = `fs_product_img`.`product_id` AND fs_product_img.url = " "
+
 
