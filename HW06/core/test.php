@@ -46,4 +46,4 @@ $conn->close();
 
 
 <!-- tên loại sản phẩm và chủng loại của nó -->
-<!-- SELECT fs_category.id, fs_category.name FROM fs_category LEFT JOIN fs_department ON `fs_category`.`department_id` = `fs_department`.`id` -->
+SELECT fs_category.id, fs_category.name FROM fs_category LEFT JOIN fs_department ON `fs_category`.`department_id` = `fs_department`.`id`

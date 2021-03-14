@@ -37,7 +37,7 @@ if (!$result2) {
                 <li><button id="btn-menu-bar"><i class="fa fa-bars" aria-hidden="true"></i></button></li>
                 <li><a href="listing.php">Trang chủ</a></li>
                 <li><a href="about_us.php">Giới thiệu</a></li>
-                <li id="toggle-product"><a href=""> Sản phẩm</a>
+                <li id="toggle-product"><a href="#"> Sản phẩm</a>
                     <ul class="sub-main-menu">
                         <?php
                             while($row = $result1->fetch_row()) { ?>

@@ -10,14 +10,13 @@
             <article>
                 <section>
                     <?php
-                        $sql3= "SELECT * FROM `fs_product`";
+                        $sql3= "SELECT * FROM `fs_product` LIMIT 20";
                         $result3 = mysqli_query($link,$sql3);
                         if (!$result3) {
                             printf("Error: %s\n", mysqli_error($link));
                             exit();
                         }
-                        for ($i=0; $i < 20; $i++) { 
-                            $row3 = mysqli_fetch_assoc($result3); ?>
+                        while($row3 = mysqli_fetch_assoc($result3)) {  ?>
                                 <div class="product">
                                     <span class="product-name"><a href="detail.php?id=<?php echo $row3['id']; ?>"><?php echo $row3['name']; ?></a></span>
                                     <a href="detail.php?id=<?php echo $row3['id']; ?>"><img class="product-img" src="../image/iphone.jpg" alt="<?php echo $row3['name']; ?>"></a> 

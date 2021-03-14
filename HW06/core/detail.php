@@ -25,6 +25,8 @@
                             exit();
                         } 
                         $row = mysqli_fetch_assoc($result);
+                        $count = mysqli_num_rows($result);
+                        if($count > 0){
                         ?>
                     <div class="detail-product-box">
                         <div class="img-product-detail">
@@ -80,6 +82,18 @@
                             <span class="coutn-rating-product-detail"><?php //echo $row['desc']; ?></span>
                         </div>
                     </div>
+
+                 <?php  }
+                    else{ ?>
+                        <div>
+                        <h2 style="color:red;padding:20px">
+                        <?php echo "Sản phẩm không tại!"; ?>
+                        <br><img src="../image/no_product.jpg" alt="">
+                        </h2>
+                    </div>
+                   <?php } 
+                 
+                 ?>
                 </section>
             </article>
             <aside id="aside-right">right</aside>

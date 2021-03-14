@@ -14,7 +14,7 @@
                         if(isset($_GET['cat'])){
                             $cat = $_GET['cat'];
                         }
-                        $sql= "SELECT * FROM `fs_product` WHERE `category_id` = $cat ORDER BY id DESC";
+                        $sql= "SELECT * FROM `fs_product` WHERE `category_id` = $cat ORDER BY id DESC LIMIT 20";
                         $result = mysqli_query($link,$sql);
                         if (!$result) {
                             printf("Error: %s\n", mysqli_error($link));
