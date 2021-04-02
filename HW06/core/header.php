@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+//include 'connect.php';
 
 $sql1= "SELECT d.id,d.name FROM `fs_department` as d";
  
