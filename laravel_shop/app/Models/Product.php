@@ -11,9 +11,18 @@ class Product extends Model
     use HasFactory;
 
     protected $table='nn_product';
+    public $timestamps = false;
     public function product_category()
     {
     	return $this->belongsTo('App\ProductCategory','category_id','id');
+    }
+    public function rating_product()
+    {
+        return $this->hasMany(RatingProduct::class,'id_product','id');
+    }
+    public function comment_product()
+    {
+        return $this->hasMany(CommentProduct::class,'id_product','id');
     }
 
     public function getHotProduct(){
@@ -24,6 +33,7 @@ class Product extends Model
     }
 
     public function getNewProduct(){
+
         $new_products = Product::orderBy('id','desc')
                         ->limit(20)
                         ->get();
@@ -32,6 +42,16 @@ class Product extends Model
 
     public function getProductDetail($id){
         $product = Product::find($id);
+        $view = [];
+        $view = $id;
+        session([$id => 1]);
+        // dd($value = session($id));
+        // if(Session::get($id) == null){
+        //     $view = $product->view;
+        //     // $sql = 'UPDATE `nn_product` SET `view`=`view`+1 WHERE `id`='.$id;
+        //     Product::where('id', $id)->update(['view'=>$view + 1]);
+        //     Session::put($id, 1);
+        // }
         return $product;
     }
 
@@ -46,4 +66,10 @@ class Product extends Model
                     ->paginate(20);
         return $products;
     }
+
+    // public function getStar($id){
+        
+    // }
+
+    
 }

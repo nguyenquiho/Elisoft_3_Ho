@@ -55,17 +55,19 @@
                             <div class="clear"></div>
                         <ul class="left qt">
                    	    <li class="bold qty">QTY</li>
-                           <form method = 'POST' id = "form_add_cart"action="?mod=cart&act=1&id=">
+                           <form method = 'get' id = "form_add_cart"action="">
                             <li><input id = "val_qty" value='' name="qty" type="number" class="bar" ></li>
                             <li><a href="javascript:" onclick= "document.getElementById('form_add_cart').submit();" class="simplebtn"><span>Add To Cart</span></a></li>
                             </form>
                             <script>
-                                // if(document.getElementById('form_add_cart').submit() == true){
-                                //     num = document.getElementById("val_qty").value);
-                                //     alert("abc");
-                                // }
-                                
-                                
+                                $( "#val_qty" ).change(function() {
+                                var qty = ($("#val_qty").val());
+                                if(qty <= 0){
+                                    alert("So luong phai lon hon 0");
+                                    location.reload();
+                                }
+                                $('#form_add_cart').attr('action', "cart/add/<?=$product_detail->id;?>/"+qty);
+                                });                                
                             </script>
                         </ul>
                     </div>

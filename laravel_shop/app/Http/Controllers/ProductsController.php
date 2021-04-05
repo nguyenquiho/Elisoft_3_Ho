@@ -16,6 +16,7 @@ class ProductsController extends Controller
         $product = new Product();
         $hot_products = $product->getHotProduct();
         $new_products = $product->getNewProduct();
+        
         return view('page.home',['hot_products'=>$hot_products,'new_products'=>$new_products]);
         // $vi = new Vietnamese();
         // $str = 'Đây là 1 câu tiếng Việt không dấu';
@@ -40,6 +41,8 @@ class ProductsController extends Controller
         //dd($req->cat);
         $product = new Product();
         $products = $product->getNewProductByCat($req->cat,$req->order_by);
-        return view('page.listing',['products'=>$products,'cat'=>$req->cat]);
+        $category = Category::find($req->cat);
+        $cat_name = $category->name;
+        return view('page.listing',['products'=>$products,'cat'=>$req->cat,'cat_name'=>$cat_name]);
     }
 }

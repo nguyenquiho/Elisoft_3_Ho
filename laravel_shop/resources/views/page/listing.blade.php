@@ -6,7 +6,13 @@
     // }
     // print_r($product_detail['desc']);
     // die();
+    if(count($products) == 0){ ?>
+    <h2>Không có sản phẩm
+thuộc loại {{$cat_name}}</h2>
+
+<?php    } 
 ?>
+
 <div class="col2">
         	<div class="col2_top">&nbsp;</div>
             <div class="col2_center">
@@ -70,4 +76,5 @@
             </div>
             </div>
             </div>
+            <?php //} ?>
 @endsection
