@@ -42,6 +42,23 @@ class Product extends Model
 
     public function getProductDetail($id){
         $product = Product::find($id);
+        
+     //   if(Session::get('view') == null){
+          //$view[] = $id;
+           //session()->put('view', []); 
+           session()->put('view', []);
+        //}
+        //else{
+            session()->push('view', $id); 
+            //$pr = Session::get('view');
+        //}
+        //session(['view' => $view]);
+        //Session('view',$view);
+        // Session::get('view');
+       //Session::push('view', $pr);
+        
+        dd(Session::get('view'));
+
         // dd($value = session($id));
         // if(Session::get($id) == null){
         //     $view = $product->view;

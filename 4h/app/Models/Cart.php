@@ -45,7 +45,7 @@ class Cart extends Model
    	}
   	}
 
-  	$cart['qty'] += $qty;
+  	$cart['qty'] = $cart['qty'] + $qty;
   	$cart['price'] = $item->price * $cart['qty'];
   	$this->items[$id] = $cart;
   	$this->totalQty+= $qty;
