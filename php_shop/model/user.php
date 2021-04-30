@@ -190,6 +190,8 @@ class User{
             // Bước 1: tạo folder upload avetar để chứa ảnh
             $target_dir="images/avt/";
             $target_file= $target_dir.basename($_FILES['fileUpload']['name']); // Lấy target nối với tên file cần upload
+            print_r($target_file);
+            die();
             // Bước 2: Kiểm tra điều kiện file
             // 
             // 1: Ktra kích thước file

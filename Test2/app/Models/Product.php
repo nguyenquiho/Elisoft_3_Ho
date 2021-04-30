@@ -65,16 +65,6 @@ class Product extends Model
             session()->push('view', $id); 
             
         }
-
-        // dd(Session::get('view'));
-
-        // dd($value = session($id));
-        // if(Session::get($id) == null){
-        //     $view = $product->view;
-        //     // $sql = 'UPDATE `nn_product` SET `view`=`view`+1 WHERE `id`='.$id;
-        //     Product::where('id', $id)->update(['view'=>$view + 1]);
-        //     Session::put($id, 1);
-        // }
         return $product;
     }
 
@@ -89,10 +79,4 @@ class Product extends Model
                     ->paginate(20);
         return $products;
     }
-
-    // public function getStar($id){
-        
-    // }
-
-    
 }
