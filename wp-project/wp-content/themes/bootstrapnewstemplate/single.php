@@ -87,7 +87,7 @@
                             $author_id = get_post_field( 'post_author', $post->ID );
                             $author_name = get_the_author_meta( 'display_name', $author_id );
                             $url = get_author_posts_url($echo,$author_id);
-                            echo get_author_posts_url($author_id);
+                            //echo get_author_posts_url($author_id);
                             //dd(the_author_posts_link());
                             
                             //dd(get_post_meta( $post->ID, 'post_views_count'));
